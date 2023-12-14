@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+	<nav class="nav-bar">
+		<h1>Equestrial</h1>
+		<form class="search-form">
+			<input class="search-bar" type="text"/>
+			<button class="search-submit" type="submit">Search</button>
+		</form>
+
+		<a href="/about-us">About Us</a>
+		<a href="/contact">Contact</a>
+	</nav>
+
+	<div class="content">
+		<main class="store">
+			<!--
+				type ItemInfo {
+					price: number;
+					name: string;
+					picture: number;
+				}
+			-->
+			<h2 class="store-section-title">Most Popular</h2>
+			<div class="store-item-container">
+				<%for(let i = 0; i < 4; i++) {%>
+					<%- include('partials/component', rows[0])%>
+				<%}%>
+			</div>
+
+			<h2 class="store-section-title">New</h2>
+			<div class="store-item-container">
+				<%for(let i = 0; i < 3; i++) {%>
+					<%- include('partials/component', rows[0])%>
+				<%}%>
+			</div>
+
+			<h2 class="store-section-title">All Items</h2>
+			<div class="store-item-container">
+				<%for(let i = 0; i < 8; i++) {%>
+					<%- include('partials/component', rows[0])%>
+				<%}%>
+			<div>
+
+
+		</main>
+
+		<aside class="cart-menu">
+			<h2 class="cart-title">Cart</h2>
+			<div class="cart-item">
+				<div class="cart-name-div">
+					<span class="cart-item-name">Strawberry</span>
+					<button>x</button>
+				</div>
+				<div class="cart-amt-div">
+					<label for="amt">Qty: <span>10</span></label>
+					<button>-</button>
+					<button>+</button>
+				</div>
+			</div>
+
+			<button class="checkout">Checkout</button>
+		</aside>
+	</div>
+
+  </body>
+</html>
+
