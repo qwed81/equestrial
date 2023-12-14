@@ -7,7 +7,6 @@ require('dotenv').config();
 
 app.use(express.json());
 app.use('/static', express.static(path.join(__dirname, 'static')));
-app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.set('view engine', 'ejs');
 
